@@ -5,4 +5,4 @@ from app.api.endpoints import airflow
 
 api_router = APIRouter()
 api_router.include_router(results.router, tags=['perfscale'])
-api_router.include_router(airflow.router, tags=['perfscale'])
+# api_router.include_router(airflow.router, tags=['perfscale'])

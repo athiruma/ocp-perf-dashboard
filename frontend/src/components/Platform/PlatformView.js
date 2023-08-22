@@ -10,7 +10,8 @@ export default function PlatformView() {
   return (
     <>   
     <div className="PlatformView">
-     <PlatformTabs id="PlatformTabs" data={perfData} />
+     {/*<PlatformTabs id="PlatformTabs" data={perfData} />*/}
+        Hello
      </div>
     </>
   );

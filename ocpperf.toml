@@ -1,0 +1,11 @@
+[elasticsearch]
+url=https://search-perfscale-dev-chmf5l4sh66lvxbnadi4bznl3a.us-west-2.es.amazonaws.com/
+indice=perf_scale_ci
+
+[ocp-server]
+port=8000
+
+[airflow]
+url=https://athiruma-athiruma-playground-airflow.apps.sailplane.perf.lab.eng.rdu2.redhat.com
+username=admin
+password=100yard-

@@ -13,6 +13,7 @@ import {
   PageSection,
   PageSectionVariants
 } from '@patternfly/react-core';
+import {Home} from "./components/Home";
 
 export default function App() {
   const logoProps = {
@@ -72,9 +73,6 @@ export default function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
 function About() {
   return <h2>About</h2>;

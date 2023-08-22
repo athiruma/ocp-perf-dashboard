@@ -6,7 +6,7 @@ RUN mkdir /app
 
 COPY . /app
 WORKDIR /app
-
+COPY package* ./
 RUN yarn install
 EXPOSE 3000
 
