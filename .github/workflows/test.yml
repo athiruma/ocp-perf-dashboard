@@ -1,0 +1,25 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+
+jobs:
+  unittest:
+    name: unittest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Backend
+        run: |
+          cd backend
+          ls
+          echo "Run Backend"
+      - name: Run Frontend
+        run: |
+          echo "Run FrontEnd"
