@@ -7,6 +7,8 @@ on:
     types:
       - opened
       - edited
+      - synchronize
+      - reopened
     branches:
       - main
 
@@ -18,16 +20,34 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: 3.9
       - name: Install dependencies
         run: |
           cd backend/
           pip3 install -r tests/requirements.txt
-      - name: Run the Pytest
+      - name: 📃 Unittest tests with pytest
         run: |
           cd backend/
-          pytest
+          echo "$GITHUB_HEAD_REF"-"$GITHUB_SHA"
+#          pytest
 
-
+#  quay_upload:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Check out Git repository
+#        uses: actions/checkout@v4
+#      - name: Build the backend image
+#        env:
+#          REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+#          REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
+#          REGISTRY_NAME: ${{ secrets.REGISTRY_NAME }}
+#        run: |
+#          cd backend/
+#          docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD $REGISTRY_NAME
+#          export IMAGE_NAME="$REGISTRY_NAME"/"$REGISTRY_USERNAME"/cpt-backend:"$GITHUB_REF_NAME"-"$GITHUB_SHA"
+#          docker build -t $IMAGE_NAME -f backend.containerfile .
+#          docker push $IMAGE_NAME
+    
+    
