@@ -1,0 +1,33 @@
+
+
+name: "Test and Build PR image"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+    branches:
+      - main
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          cd backend/
+          pip3 install -r tests/requirements.py
+      - name: Run the Pytest
+        run: |
+          cd backend/
+          pytest
+
+
