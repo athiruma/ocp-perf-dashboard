@@ -1,7 +1,10 @@
 
 
-def test_search():
+def test_search_1():
     assert True
 
-def test_search2():
+def test_search_2():
+    assert True
+
+def test_search_3():
     assert True
