@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd backend/
-          pip3 install -r tests/requirements.py
+          pip3 install -r tests/requirements.txt
       - name: Run the Pytest
         run: |
           cd backend/
