@@ -13,7 +13,7 @@ def test_search_4():
     assert True
 
 def test_search_5():
-    assert True
+    assert not False
 
 def test_search_6():
     assert not False
