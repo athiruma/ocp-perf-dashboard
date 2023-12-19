@@ -14,3 +14,6 @@ def test_search_4():
 
 def test_search_5():
     assert True
+
+def test_search_6():
+    assert True
